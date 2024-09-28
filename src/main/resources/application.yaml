@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: journey-to-west
+  threads:
+    virtual:
+      enabled: true
+  ai:
+    ollama:
+      chat:
+        enabled: true
+        options:
+          model: "qwen2.5:0.5b"
+          temperature: 0.2
+      embedding:
+        options:
+          model: "viosay/conan-embedding-v1"
+    vectorstore:
+      chroma:
+        collectionName: journey2west
+        initializeSchema: true
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: DEBUG
